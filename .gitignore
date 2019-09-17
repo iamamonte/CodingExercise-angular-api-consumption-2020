@@ -1,0 +1,6 @@
+
+*.cache
+*.cache
+HackerNews.Domain/obj/Debug/netcoreapp2.2/HackerNews.Domain.pdb
+HackerNews.Domain/obj/Debug/netcoreapp2.2/HackerNews.Domain.dll
+HackerNews.Domain/obj/Debug/netcoreapp2.2/HackerNews.Domain.csprojAssemblyReference.cache
