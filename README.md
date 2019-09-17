@@ -18,7 +18,7 @@ If you have time, try some of the bonuses:
 
  
 
-# Architecture
+# Design Plan
  ## .net Core MVC
     A .net core MVC app will serve as the infrastructure for this application. It will query and hold the top 500 stories in memory. That list can be cleared and refreshed by the end user. It will expose endpoints accessible by the front end, which will be written in Angular. 
 
@@ -48,3 +48,25 @@ If you have time, try some of the bonuses:
         -  Where ID is an integer
     -   User data is exposed through https://hacker-news.firebaseio.com/v0/user/<ID>.json?print=pretty
         -   Where ID is a case sensitive user ID
+
+# Solution Architecture
+This solution can be loaded and debugged in VS Code or Visual Studio Community 2019. Expect various extension prompts in VS Code when running either the Test or Web projects. The following commands were used to create the solution:
+    
+    ```console
+    dotnet new sln -n HackerNews
+    dotnet new classlib -f netcoreapp2.2 -n HackerNews.Domain
+    dotnet new nunit -f netcoreapp2.2 -n HackerNews.Test
+    dotnet new angular -f netcoreapp2.2 -n HackerNews.Web
+    dotnet sln HackerNews.sln add .\HackerNews.Domain\HackerNews.Domain.csproj .\HackerNews.Test\HackerNews.Test.csproj .\HackerNews.Web\HackerNews.Web.csproj
+    dotnet add .\HackerNews.Test\HackerNews.Test.csproj reference .\HackerNews.Domain\HackerNews.Domain.csproj
+    dotnet add .\HackerNews.Web\HackerNews.Web.csproj reference .\HackerNews.Domain\HackerNews.Domain.csproj
+    ```
+ ## HackerNews.Domain
+    - Contains domain objects and services.
+ ## HackerNews.Test
+    - Contains tests against HackerNews.Domain
+ ## HackerNews.Web
+    - Contains angular front end, MVC backend, front end tests.
+ ## Extensions
+   - .net core test explorer
+   - C# XML Documentation Comments
