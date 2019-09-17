@@ -1,0 +1,9 @@
+C:\Users\dandrews\Documents\GitHub\hackernewsnetcoreapp\HackerNews.Domain\bin\Debug\netcoreapp2.2\HackerNews.Domain.deps.json
+C:\Users\dandrews\Documents\GitHub\hackernewsnetcoreapp\HackerNews.Domain\bin\Debug\netcoreapp2.2\HackerNews.Domain.dll
+C:\Users\dandrews\Documents\GitHub\hackernewsnetcoreapp\HackerNews.Domain\bin\Debug\netcoreapp2.2\HackerNews.Domain.pdb
+C:\Users\dandrews\Documents\GitHub\hackernewsnetcoreapp\HackerNews.Domain\obj\Debug\netcoreapp2.2\HackerNews.Domain.csprojAssemblyReference.cache
+C:\Users\dandrews\Documents\GitHub\hackernewsnetcoreapp\HackerNews.Domain\obj\Debug\netcoreapp2.2\HackerNews.Domain.csproj.CoreCompileInputs.cache
+C:\Users\dandrews\Documents\GitHub\hackernewsnetcoreapp\HackerNews.Domain\obj\Debug\netcoreapp2.2\HackerNews.Domain.AssemblyInfoInputs.cache
+C:\Users\dandrews\Documents\GitHub\hackernewsnetcoreapp\HackerNews.Domain\obj\Debug\netcoreapp2.2\HackerNews.Domain.AssemblyInfo.cs
+C:\Users\dandrews\Documents\GitHub\hackernewsnetcoreapp\HackerNews.Domain\obj\Debug\netcoreapp2.2\HackerNews.Domain.dll
+C:\Users\dandrews\Documents\GitHub\hackernewsnetcoreapp\HackerNews.Domain\obj\Debug\netcoreapp2.2\HackerNews.Domain.pdb

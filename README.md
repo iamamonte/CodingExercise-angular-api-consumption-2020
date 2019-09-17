@@ -19,6 +19,7 @@ If you have time, try some of the bonuses:
  
 
 # Design Plan
+ 
  ## .net Core MVC
     A .net core MVC app will serve as the infrastructure for this application. It will query and hold the top 500 stories in memory. That list can be cleared and refreshed by the end user. It will expose endpoints accessible by the front end, which will be written in Angular. 
 
@@ -50,7 +51,11 @@ If you have time, try some of the bonuses:
         -   Where ID is a case sensitive user ID
 
 # Solution Architecture
-This solution can be loaded and debugged in VS Code or Visual Studio Community 2019. Expect various extension prompts in VS Code when running either the Test or Web projects. The following commands were used to create the solution:
+ ## System Dependencies
+      - .Net Core SDK 2.2.401+
+      -  VS Code 1.38.1 or Visual Studio Community 2019
+ ## Solution Setup   
+ The following commands were used to create the solution:
     
     ```console
     dotnet new sln -n HackerNews
@@ -70,3 +75,4 @@ This solution can be loaded and debugged in VS Code or Visual Studio Community 2
  ## Extensions
    - .net core test explorer
    - C# XML Documentation Comments
+   - C# for Visual Studio Code (powered by OmniSharp)
