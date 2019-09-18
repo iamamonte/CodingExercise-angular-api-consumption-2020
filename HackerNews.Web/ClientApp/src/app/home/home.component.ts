@@ -27,7 +27,7 @@ export class HomeComponent {
    * Queries backend for subset of stories.
    * @param query -  Username or portion of the title of a story
    */
-  public search(query: string)
+  public search()
   {
     this.stories = null;
     this._storyService.queryStories(this.page, this.results, this.query).subscribe(data => {
