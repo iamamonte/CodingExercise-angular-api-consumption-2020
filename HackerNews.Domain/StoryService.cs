@@ -26,8 +26,12 @@ namespace HackerNews.Domain
             {
 
                 var storyJson = _hackerNewsService.FetchItem(id).Result;
-                retval.Add(_netCoreSerializer.Serialize(storyJson));
-                storyCount++;
+                var story = _netCoreSerializer.Serialize(storyJson);
+                if (story != null)
+                {
+                    retval.Add(story);
+                    storyCount++;
+                }
                 if (storyCount >= count) break;
             }
             

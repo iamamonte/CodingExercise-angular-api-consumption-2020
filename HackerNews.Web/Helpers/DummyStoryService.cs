@@ -8,6 +8,7 @@ namespace HackerNews.Web.Helpers
 {
     public class DummyStoryService : IStoryService
     {
+        public DummyStoryService() { }
         private static string[] Titles = new[]
      {
            "Google does this",
@@ -32,7 +33,7 @@ namespace HackerNews.Web.Helpers
         public IEnumerable<Story> GetNewStories(int count=500)
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new Story
+            return Enumerable.Range(1, count).Select(index => new Story
             {
                 By = Authors[rng.Next(Authors.Length)],
                 Title = Titles[rng.Next(Titles.Length)],

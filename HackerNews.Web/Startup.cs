@@ -23,8 +23,10 @@ namespace HackerNews.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<IStoryService, DummyStoryService>();
-            //services.AddScoped<IStoryService, StoryService>();
+            services.AddSingleton<IHackerNewsService, HackerNewsService>();
+            services.AddSingleton<INetCoreSerializer, NewtonsoftSerializer>();
+            //services.AddScoped<IStoryService, DummyStoryService>();
+            services.AddScoped<IStoryService, StoryService>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

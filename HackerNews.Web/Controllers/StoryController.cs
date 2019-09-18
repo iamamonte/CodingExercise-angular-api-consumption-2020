@@ -15,20 +15,44 @@ namespace HackerNews.Web.Controllers
         public StoryController(IStoryService storyService)
         {
             _storyService = storyService;
-            //TODO: place stories into cache
-            DataStore = _storyService.GetNewStories().ToList();
-            
+            //hardcoded number of stories
+            ResetDataStore(30);
+           
+
         }
 
-     
+        private void ResetDataStore(int count)
+        { 
+            //TODO: place stories into cache
+            DataStore = _storyService.GetNewStories(count).ToList();
+        }
 
-        
+        /// <summary>
+        /// Clears the Story objects held in memory.
+        /// </summary>
+        [HttpGet]
+        public void Reset()
+        {
+            DataStore = new List<Story>();
+        }
 
         [HttpGet("[action]")]
-        public IEnumerable<Story> Stories()
+        public IEnumerable<Story> Stories(int count = 20)
         {
-
+            if (DataStore.Count < count)
+            {
+                ResetDataStore(count);
+            }
             return DataStore;
+        }
+
+        [HttpGet]
+        public IEnumerable<Story> Query(int page, int results, string query = null)
+        {
+            return DataStore.Where(x => string.IsNullOrEmpty(query)
+            || (x.Title.Contains(query, StringComparison.CurrentCultureIgnoreCase) || x.By.Contains(query, StringComparison.CurrentCultureIgnoreCase)))
+                .Skip(page * results)
+                .Take(results);
         }
 
     }
