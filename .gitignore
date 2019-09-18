@@ -45,3 +45,4 @@ HackerNews.Test/obj/Debug/netcoreapp2.2/HackerNews.Test.csprojAssemblyReference.
 HackerNews.Test/obj/HackerNews.Test.csproj.nuget.cache
 HackerNews.Test/obj/HackerNews.Test.csproj.nuget.dgspec.json
 HackerNews.Test/obj/HackerNews.Test.csproj.nuget.g.props
+*.map
