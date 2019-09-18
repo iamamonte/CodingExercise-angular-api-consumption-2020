@@ -23,7 +23,7 @@ namespace Tests
         }
 
         [TestCase(1)]
-        [TestCase(-1)]
+        //[TestCase(-1)]
         [Test]
         public void Can_fetch_item(int id)
         {
@@ -33,7 +33,7 @@ namespace Tests
         }
 
         [TestCase("justin")]
-        [TestCase("09u21bfsdef-FAKE")]
+        //[TestCase("09u21bfsdef-FAKE")]
         [Test]
         public void Can_fetch_user(string id)
         {

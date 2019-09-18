@@ -38,7 +38,7 @@ namespace HackerNews.Test
         [TestCase(10)]
         [TestCase(50)]
         [TestCase(100)]
-        [TestCase(500)]
+        //[TestCase(500)]
         public void Can_get_stories(int count)
         {
             var stories = _storyService.GetNewStories(count);
