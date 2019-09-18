@@ -1,20 +1,28 @@
 <h1>Hacker News Stories</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p  *ngIf="stories">Showing {{stories.length}} out of {{totalCount}} available stories from HackerNews </p>
 
 <p *ngIf="!stories"><em>Loading...</em></p>
+<div>
+  <div class="form-group">
+    <label for="example-change" >Search:</label>
+    <input [ngModel]="query" (ngModelChange)="query=$event" id="example-change" class="form-control">
+    <button type="button" class="btn btn-primary" (click)="search()">Submit</button>
+  </div>
+  
+  <table class='table table-striped' *ngIf="stories">
+    <thead>
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let story of stories">
+        <td>{{ story.by }}</td>
+        <td> <a href="{{ story.url }}" target="_blank"> {{ story.title }}</a></td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class='table table-striped' *ngIf="stories">
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let story of stories">
-      <td>{{ story.by }}</td>
-      <td> <a href="{{ story.url }}" target="_blank"> {{ story.title }}</a></td>
-    </tr>
-  </tbody>
-</table>
+</div>

@@ -46,13 +46,14 @@ namespace HackerNews.Web.Controllers
             return DataStore;
         }
 
-        [HttpGet]
-        public IEnumerable<Story> Query(int page, int results, string query = null)
+        [HttpGet("[action]")]
+        public JsonResult Query(int page, int results, string query = null)
         {
-            return DataStore.Where(x => string.IsNullOrEmpty(query)
-            || (x.Title.Contains(query, StringComparison.CurrentCultureIgnoreCase) || x.By.Contains(query, StringComparison.CurrentCultureIgnoreCase)))
-                .Skip(page * results)
-                .Take(results);
+            var stories = DataStore.Where(x => string.IsNullOrEmpty(query)
+            || (x.Title.Contains(query, StringComparison.CurrentCultureIgnoreCase) || x.By.Contains(query, StringComparison.CurrentCultureIgnoreCase)));
+                
+            return new JsonResult(new { @TotalCount = stories.Count(), @Stories=stories.Skip((page-1) * results).Take(results)});
+            
         }
 
     }
