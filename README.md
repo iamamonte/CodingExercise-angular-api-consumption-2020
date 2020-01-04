@@ -1,5 +1,5 @@
 # hackernewsnetcoreapp
-A small .net core angular app which pings github.com/HackerNews/API
+A small .net core angular app which pings github.com/HackerNews/API. Live version can be found here: https://hackwebnews.azurewebsites.net/
 
 # Requirements
 Use https://github.com/HackerNews/API to generate a modern, web-based solution using C# and .NET Core that displays the title and author of the newest stories on Hacker News. This should be your code, so don’t just drop a library in and don’t use Razor.
